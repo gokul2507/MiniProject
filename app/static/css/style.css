@@ -1,0 +1,15 @@
+*{
+     margin: 0px;
+     padding: 0px;
+}
+.temp, .delete{
+     display:inline-block
+}
+
+p{
+     display: inline-block;
+     margin:0px;
+}
+.tag{
+     display: inline-block;
+}

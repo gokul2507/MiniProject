@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+
+<body>
+     <a href="/">home</a>
+     <a href="/upload/">upload</a>
+     excel
+     {% csrf_token %}
+     <form action='{% url "excel" %}' method="POST" enctype="multipart/form-data">
+          <input type="file" name="excel" id="excel" required>
+          <input type="submit" id="submit" name="submit" value="submit" />
+     </form>
+
+     {% if error%}
+     {{error}}
+     {% endif %}
+     <p>formate : <a href="sampel.xlsx" download>Here</a></p>
+     
+
+     <br>
+</body>
+
+</html>

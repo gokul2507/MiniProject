@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     edit
+     <!--['paperid3', 
+          '1', ['gokul r'], 
+          'journal name', 
+          'paper name', '1', '2000', '2', '5'] 1-->
+     {{content}}
+     {{uid}}
+     <br>
+     {% for i in content.2 %}
+     {{i.0}}
+     <input type="text" name=authorf{{ forloop.counter }} id=authorf{{ forloop.counter }} value={{ i.0 }} required>
+     {% if i.1%}
+     <input type="text" name=authorm{{ forloop.counter }} id=authorm{{ forloop.counter }} value={{ i.1 }} required>
+     {% else %}
+     <input type="text" name=authorm{{ forloop.counter }} id=authorm{{ forloop.counter }} value="  " required>
+     {% endif %} 
+     <input type="text" name=authorl{{ forloop.counter }} id=authorl{{ forloop.counter }} value={{ i.2 }} required>
+     {{i.1}}
+     {{i.2}}
+     {% endfor %}<br>
+</body>
+</html>
