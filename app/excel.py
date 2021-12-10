@@ -8,9 +8,10 @@ def excel_update(request,worksheet):
         excel_data = list()
         if list(worksheet.iter_rows(1,1,None,None,1))!=[('paperid', 'authorcount', 'name', 'journal', 'paper', 'edition', 'year', 'spage', 'epage')]:
              return render(request,"excel.html",{"error":"Not A Valid File"})
-        else: 
+        else:
             for row in worksheet.iter_rows(2,None,None,None,1):
-               data.insert_row(row, 2)
+                print(row)
+                data.append_row(row)
             return redirect("home")
 
 
