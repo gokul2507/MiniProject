@@ -11,10 +11,6 @@
 <body>
      <form action="/update/" method="POST" >
           edit
-          <!--['paperid3', 
-          '1', ['gokul r'], 
-          'journal name', 
-          'paper name', '1', '2000', '2', '5'] 1-->
           <br>
           uid {{uid}}
           <input type="hidden" name="uid" id="uid" value={{ uid }} required>
@@ -35,16 +31,16 @@
           <input type="text" name="paperid" id="paperid" value={{ content.0 }} required>
           <br>
           edition
-          <input type="number" name="paperedition" min="1" id="paperedition" value={{ content.5 }} required>
+          <input type="TEXT" name="paperedition" min="1" id="paperedition" value={{ content.5 }} required>
           <br>
           year
           <input type="number" name="year" id="year" min="1000" max="2021" step="1" value={{ content.6 }} required>
           <br>
           start page
-          <input type="number" min="1" value={{ content.7 }} name="startpage" id="startpage">
+          <input type="number" min="1" max="2000" value={{ content.7 }} name="startpage" id="startpage">
           <br>
           end page
-          <input type="number" name="endpage" min="1" value={{ content.8 }} id="endpage" required>
+          <input type="number" name="endpage" min="1" max="2000" value={{ content.8 }} id="endpage" required>
           <br>
           <button name="submit" type="submit">submit</button>
      </form>

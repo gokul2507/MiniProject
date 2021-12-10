@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 
 <head>
      <meta charset="UTF-8">
@@ -21,8 +22,8 @@
      {% if error%}
      {{error}}
      {% endif %}
-     <p>formate : <a href="sampel.xlsx" download>Here</a></p>
-     
+     <p>formate : <a href="{% static 'js/sample.xlsx'%}" download>Here</a></p>
+
 
      <br>
 </body>
