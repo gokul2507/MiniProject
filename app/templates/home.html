@@ -37,7 +37,7 @@
      </div>
      <input type="text" name="ttag" id="ttag" />
      {% for i in context %}
-     <div onclick="display(this,'/display/')" id={{ forloop.counter }} class="list">
+     <div onclick="displaydetails(this,'/display/')" id={{ forloop.counter }} class="list">
           {{ forloop.counter }}
           <!--Count for id-->
           names:

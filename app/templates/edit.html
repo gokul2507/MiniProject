@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
 </head>
+
 <body>
-     edit
-     <!--['paperid3', 
+     <form action="/update/" method="POST" >
+          edit
+          <!--['paperid3', 
           '1', ['gokul r'], 
           'journal name', 
           'paper name', '1', '2000', '2', '5'] 1-->
-     {{content}}
-     {{uid}}
-     <br>
-     {% for i in content.2 %}
-     {{i.0}}
-     <input type="text" name=authorf{{ forloop.counter }} id=authorf{{ forloop.counter }} value={{ i.0 }} required>
-     {% if i.1%}
-     <input type="text" name=authorm{{ forloop.counter }} id=authorm{{ forloop.counter }} value={{ i.1 }} required>
-     {% else %}
-     <input type="text" name=authorm{{ forloop.counter }} id=authorm{{ forloop.counter }} value="  " required>
-     {% endif %} 
-     <input type="text" name=authorl{{ forloop.counter }} id=authorl{{ forloop.counter }} value={{ i.2 }} required>
-     {{i.1}}
-     {{i.2}}
-     {% endfor %}<br>
+          <br>
+          uid {{uid}}
+          <input type="hidden" name="uid" id="uid" value={{ uid }} required>
+          <input type="hidden" name="no_author" id="no_author" value={{ content.1 }}>
+          {% for i in content.2 %}
+          <input type="text" name=authorf{{ forloop.counter }} id=authorf{{ forloop.counter }} value={{ i.0 }} required>
+          <input type="text" name=authorm{{ forloop.counter }} id=authorm{{ forloop.counter }} value={{ i.1 }}>
+          <input type="text" name=authorl{{ forloop.counter }} id=authorl{{ forloop.counter }} value={{ i.2 }} required>
+          <br>
+          {% endfor %}<br>
+          journal name
+          <textarea name="journal" id="journal" cols="30" rows="10" required>{{ content.3 }}</textarea>
+          <br>
+          paper name
+          <textarea name="papername" id="papername" cols="30" rows="10" required>{{ content.4 }}</textarea>
+          <br>
+          paper id
+          <input type="text" name="paperid" id="paperid" value={{ content.0 }} required>
+          <br>
+          edition
+          <input type="number" name="paperedition" min="1" id="paperedition" value={{ content.5 }} required>
+          <br>
+          year
+          <input type="number" name="year" id="year" min="1000" max="2021" step="1" value={{ content.6 }} required>
+          <br>
+          start page
+          <input type="number" min="1" value={{ content.7 }} name="startpage" id="startpage">
+          <br>
+          end page
+          <input type="number" name="endpage" min="1" value={{ content.8 }} id="endpage" required>
+          <br>
+          <button name="submit" type="submit">submit</button>
+     </form>
 </body>
+
 </html>

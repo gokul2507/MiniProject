@@ -1,4 +1,4 @@
-function display(x,url) {
+function displaydetails(x,url) {
      var f = document.createElement('form');
      f.action=url;
      f.method='POST';

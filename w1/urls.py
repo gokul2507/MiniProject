@@ -28,7 +28,6 @@ urlpatterns = [
     path('sucess/',views.sucess,name="sucess"),
     path('excel/',views.excel,name="excel"),
     path('edit/', views.edit,name="edit"),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
+    path('update/', views.update,name="update"),
     # path('display/',views.display,name="display"),
 ]
