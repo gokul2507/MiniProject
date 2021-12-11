@@ -1,3 +1,4 @@
+from re import sub
 from .credentials import get_access
 from django.http import JsonResponse
 from django.core import serializers
@@ -8,9 +9,10 @@ class GETDATA:
           self.sheet_data=data.get_all_records()
           pass
      def contain(self,main_str,sub_str):
-          if sub_str==main_str.get("paperid","") or sub_str==main_str.get("year","") or sub_str==main_str.get("edition",""):
+          sub_str=sub_str.lower()
+          if sub_str==str(main_str.get("paperid","")).lower() or sub_str==str(main_str.get("year","")).lower() or sub_str==str(main_str.get("edition","")).lower():
                return 1
-          return sub_str in main_str.get("name","") or sub_str in main_str.get("journal","") or sub_str in main_str.get("paper","")
+          return sub_str in str(main_str.get("name","")).lower() or sub_str in str(main_str.get("journal","")).lower() or sub_str in str(main_str.get("paper","")).lower()
      def getdata(self,tags):
           result_data=[]
           index=1

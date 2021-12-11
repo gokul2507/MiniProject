@@ -48,3 +48,8 @@ def edit(request):
         content={"content":row_data,"uid":request.POST.get("id")}
         return render(request,'edit.html',content)
     return redirect('home')
+def delete(request):
+    if request.method=="POST":
+        print(int(request.POST.get("id"))+1)
+        data.delete_row(int(request.POST.get("id"))+1)
+    return redirect('home')

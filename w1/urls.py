@@ -27,6 +27,7 @@ urlpatterns = [
     path('sucess/',views.sucess,name="sucess"),
     path('excel/',views.excel,name="excel"),
     path('edit/', views.edit,name="edit"),
+    path('delete/', views.delete,name="delete"),
     path('update/', views.update,name="update"),
     # path('display/',views.display,name="display"),
 ]

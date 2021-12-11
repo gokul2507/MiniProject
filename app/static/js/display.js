@@ -12,6 +12,3 @@ function displaydetails(x,url) {
      document.body.appendChild(f);
      f.submit();
 }
-function edit(x) {
-     
-}
