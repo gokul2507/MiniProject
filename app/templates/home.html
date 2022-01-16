@@ -9,58 +9,63 @@
      <title>Document</title>
      <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script> -->
      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-     <style>
-          p {
-               display: inline-block;
-               margin: 0px;
-          }
-
-          .tag {
-               display: inline-block;
-          }
-          .active{
-               display: block;
-          }
-          .none{
-               display: none;
-          }
-     </style>
+     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 
 
 <body>
-
-     <a href="/">home</a>
-     <a href="/upload/">upload</a>
      <div class="tags">
      </div>
-     <input type="text" name="ttag" id="ttag" />
-     {% for i in context %}
-     <div onclick="displaydetails(this,'/display/')" id={{ forloop.counter }} class="list">
-          {{ forloop.counter }}
-          <!--Count for id-->
-          names:
-          {% for j in i.name %}
-          {{j}};
-          {% endfor%}
-          <!--Names Of the Auther-->
-          <br>
-          journal:{{i.journal}}<br>
-          <!--Journal Name-->
-          paper:{{i.paper}}<br>
-          <!--Paper Name-->
-          edition:{{i.edition}}<br>
-          <!--Edition-->
-          year:{{i.year}}<br>
-          <!--Year-->
-          start page:{{i.spage}}<br>
-          <!--starting Page-->
-          end page:{{i.epage}}<br>
-          <!--Ending page-->
+     <!-- <input type="text" name="mysearch" id="mysearch" /> -->
+
+     <div class="searchbar">
+          <div class="search">
+               <div class="icon"></div>
+               <div class="input">
+                    <input type="text" placeholder="Search" name="mysearch" id="mysearch" />
+               </div>
+               <span class="clear" id="clear"></span>
+          </div>
      </div>
-     <br>
-     {% endfor %}
+     <div class="outercover">
+          <div class="innercover">
+               {% for i in context %}
+               <div onclick="displaydetails(this,'/display/')" id={{ forloop.counter }} class="list active">
+                    <!-- {{ forloop.counter }} -->
+                    <!--Count for id-->
+                    <div class="cardheader">
+                         <p>{{i.name.0}}</p>
+                         <br>
+                    </div>
+                    <div class="cardcontent">
+                         <!--Journal Name-->
+                         <p> {{i.journal}} </p>
+                         <br>
+                         <!--Paper Name-->
+                         <p>{{i.paper}} </p>
+                         <br>
+                         <!--Edition-->
+                         <p> edition:{{i.edition}} </p>
+                         <br>
+                         <!--Year-->
+                         <p> year:{{i.year}} </p>
+                         <br>
+                         <!--starting Page-->
+                         <p> start page:{{i.spage}} </p>
+                         <br>
+                         <!--Ending page-->
+                         <p> end page:{{i.epage}} </p>
+                         <br>
+                    </div>
+               </div>
+               {% endfor %}
+          </div>
+          <div class="fixedbtn">
+               <a href="/upload/">
+                    <p>+</p>
+               </a>
+          </div>
+     </div>
      <script src="{% static 'js/display.js'%}"></script>
      <script src="{% static 'js/tags.js'%}"></script>
 

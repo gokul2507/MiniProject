@@ -1,4 +1,4 @@
-const input = document.querySelector("#ttag");
+const input = document.querySelector("#mysearch");
 const tagdiv = document.querySelector(".tags");
 const listdiv = document.querySelectorAll(".list");
 const tagarr = []
@@ -21,9 +21,9 @@ function displaytags() {
 
 }
 function display(s) {
-     if(s!=="none"){
+     if (s !== "none") {
           s = s.split("-");
-          console.log(s);
+          // console.log(s);
           listdiv.forEach(t => {
                t.classList.add("none");
           })
@@ -31,16 +31,12 @@ function display(s) {
                if (t.length > 0) {
                     var temp_d = document.getElementById(t);
                     temp_d.classList.remove("none");
-                    temp_d.classList.remove("active");
-                    temp_d.classList.add("active");
                }
           });
      }
      else {
           listdiv.forEach(t => {
                t.classList.remove("none");
-               t.classList.remove("active");
-               t.classList.add("active");
           })
      }
 }
@@ -58,11 +54,11 @@ document.addEventListener("click", (e) => {
                     tags: tagarr,
                },
                success: function (result) {
-                    console.log(result);
+                    // console.log(result);
                     display(result)
                },
                error: function (response) {
-                    console.log("some error Occurred");
+                    // console.log("some error Occurred");
                }
           })
           tagdiv.removeChild(e.target.parentNode);
@@ -74,7 +70,7 @@ input.addEventListener("keyup", (e) => {
                if (t.length > 0)
                     tagarr.push(t);
           });
-          console.log(tagarr, tagarr.length)
+          // console.log(tagarr, tagarr.length)
           e.target.value = '';
           e.preventDefault();
           $.ajax({
@@ -87,9 +83,19 @@ input.addEventListener("keyup", (e) => {
                     display(result);
                },
                error: function (response) {
-                    console.log("some error Occurred");
+                    // console.log("some error Occurred");
                }
           })
           displaytags();
      }
 })
+
+const icon = document.querySelector('.icon');
+const clear = document.querySelector('.clear');
+const search = document.querySelector('.search');
+icon.onclick = function () {
+     search.classList.toggle('active');
+}
+clear.onclick = function () {
+     search.classList.toggle('active');
+}

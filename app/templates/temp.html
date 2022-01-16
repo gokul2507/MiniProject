@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <link rel="stylesheet" href="upload.css">
+    <link rel="stylesheet"
+        href="https://fonticons-free-fonticons.netdna-ssl.com/kits/1ce05b4b/publications/117312/woff2.css" media="all">
+</head>
+
+<body>
+    <!-- <form action="/hlo" method="post"> -->
+    <!-- <input type="hidden" name="csrfmiddlewaretoken" -->
+    value="2GiMEZTVhPFv6YgkfZfbqqF8MZhIQsyCWPuU1QSvRbUmHqlkoZ6jkEPc9ETzbYmj">
+    <a href="/"><i class="fa-regular fa-house-blank"></i></a>
+    <!-- <a href="/upload/">upload</a> -->
+    <div class="container">
+        <div class="title">Details</div>
+        <form action="/process/" method="POST">
+            <input type="hidden" name="no_author" id="no_author" value="2">
+            <div class="defaultauthor">
+                <div class="namebox">
+                    <span class="details">First Name</span>
+                    <input type="text" name="authorf1" id="authorf1" required="">
+                </div>
+                <div class="namebox">
+                    <span class="details">Middle Name</span>
+                    <input type="text" name="authorm1" id="authorm1">
+                </div>
+                <div class="namebox">
+                    <span class="details">Last Name</span>
+                    <input type="text" name="authorl1" id="authorl1" required="">
+                </div>
+            </div>
+            <div class="addauthor">
+                <div class="subadd">
+                    <div class="namebox">
+                        <span class="details">First Name</span>
+                        <input type="text" name="authorf1" id="authorf1" required="">
+                    </div>
+                    <div class="namebox">
+                        <span class="details">Middle Name</span>
+                        <input type="text" name="authorm1" id="authorm1">
+                    </div>
+                    <div class="namebox">
+                        <span class="details">Last Name</span>
+                        <input type="text" name="authorl1" id="authorl1" required="">
+                    </div>
+                    <div class="delete" onclick="deleteauthor(2)"><i class="fa-light fa-trash"></i></div>
+                </div>
+
+            </div>
+            <div class="temp" onclick="addauthor()"><i class="fa-regular fa-plus"></i></div>
+            <div class="adddetails">
+                <span class="details">Journal Name</span>
+                <input type="text" name="journal" id="journal" value="ed934" required="">
+            </div>
+            <div class="adddetails">
+                <span class="details">Paper Name</span>
+                <input type="text" name="papername" id="papername" value="ed934" required="">
+            </div>
+            <div class="adddetails">
+                <span class="details">Paper Id</span>
+                <input type="text" name="paperid" id="paperid" value="ed934" required="">
+            </div>
+            <div class="adddetails"><span class="details">Edition</span>
+                <input type="number" name="paperedition" min="1" id="paperedition" value="1" required="">
+            </div>
+            <div class="adddetails"><span class="details">Year</span>
+                <input type="number" name="year" id="year" min="1000" max="2021" step="1" value="2000" required="">
+            </div>
+            <div class="adddetails"><span class="details">Start Page</span>
+                <input type="number" min="1" value="2" name="startpage" id="startpage">
+            </div>
+            <div class="adddetails"><span class="details">End Page</span>
+                <input type="number" name="endpage" min="1" value="5" id="endpage" required="">
+            </div>
+            <div class="button">
+                <input type="submit" value="Submit">
+                <p>OR</p>
+                <a href="/excel/">Upload Excel <i class="fa-regular fa-file-excel"></i> </a>
+            </div>
+        </form>
+    </div>
+    <!-- <script src="/static/js/author.js"></script> -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script> -->
+     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <style>
+          p {
+               display: inline-block;
+               margin: 0px;
+          }
+
+          .tag {
+               display: inline-block;
+          }
+          .active{
+               display: block;
+          }
+          .none{
+               display: none;
+          }
+     </style>
+</head>
+
+
+<body>
+
+     <a href="/">home</a>
+     <a href="/upload/">upload</a>
+     <div class="tags">
+     </div>
+     <input type="text" name="ttag" id="ttag" />
+     {% for i in context %}
+     <div onclick="displaydetails(this,'/display/')" id={{ forloop.counter }} class="list">
+          {{ forloop.counter }}
+          <!--Count for id-->
+          names:
+          {% for j in i.name %}
+          {{j}};
+          {% endfor%}
+          <!--Names Of the Auther-->
+          <br>
+          journal:{{i.journal}}<br>
+          <!--Journal Name-->
+          paper:{{i.paper}}<br>
+          <!--Paper Name-->
+          edition:{{i.edition}}<br>
+          <!--Edition-->
+          year:{{i.year}}<br>
+          <!--Year-->
+          start page:{{i.spage}}<br>
+          <!--starting Page-->
+          end page:{{i.epage}}<br>
+          <!--Ending page-->
+     </div>
+     <br>
+     {% endfor %}
+     <script src="{% static 'js/display.js'%}"></script>
+     <script src="{% static 'js/tags.js'%}"></script>
+
+</body>
+
+</html>

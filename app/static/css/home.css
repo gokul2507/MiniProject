@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+.nav {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+body {
+  background-color: #0c0d11;
+}
+.searchbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 95px;
+}
+.search {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 60px;
+  transition: 0.5s;
+  box-shadow: 0 0 0 5px #7ebab5;
+  overflow: hidden;
+}
+
+.search .icon {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.search .icon::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #7ebab5;
+  border-radius: 50%;
+  transform: translate(-4px, -4px);
+}
+
+.search .icon::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 12px;
+  background: #7ebab5;
+  transform: translate(6px, 6px) rotate(315deg);
+}
+
+.search.active {
+  width: 360px;
+}
+.search .input {
+  position: relative;
+  width: 300px;
+  height: 60px;
+  left: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search .input input {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 10px 0px;
+}
+.clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  right: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #999;
+  transform: rotate(45deg);
+}
+
+.clear::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #999;
+  transform: rotate(315deg);
+}
+
+.tag {
+  display: flex;
+  padding: 2px;
+  margin: 5px;
+  background: #fff;
+  border-radius: 60px;
+  transition: 0.5s;
+  box-shadow: 0 0 0 2px #7ebab5;
+}
+.spanclose {
+  color: #7ebab5;
+}
+
+.tags {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.tag span {
+  padding: 0px 5px;
+}
+
+.tag p {
+  color: #0c0d11;
+  padding: 0px 0px 0px 5px;
+}
+.outercover {
+  /* display: flex; */
+  padding: 20px;
+  /* width: 100%; */
+  /* display: flex; */
+  margin: 0px 153px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* .innercover {
+  display: grid;
+  grid-template-columns: 17% 17% 17% 17% 17%;
+  row-gap: 20px;
+  justify-content: space-between;
+  padding: 15px 25px;
+} */
+.innercover {
+  display: table;
+  padding-left: 20px;
+}
+.outercover .list {
+  background: #fff;
+  border-radius: 5px;
+  padding: 0px 0px;
+  min-width: 225px;
+  min-height: 315px;
+  width: 100%;
+}
+.innercover .list {
+  height: 315px;
+  float: left;
+  display: flex;
+  margin: 10px;
+  padding-left: 30px;
+  width: 285px;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #454864;
+  justify-content: center;
+}
+.innercover .list:hover {
+  background-color: #7ebab5;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.innercover .list:hover .cardheader p {
+  color: #454864;
+}
+.innercover .list:hover .cardcontent p {
+  color: #454864;
+  font-weight: 500;
+}
+.innercover .none {
+  display: none;
+}
+.cardheader p {
+  color: #7ebab5;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 40px;
+}
+.cardcontent p {
+  color: #f6f5f5;
+  font-size: 16px;
+  line-height: 5px;
+}
+
+.fixedbtn {
+  position: fixed;
+  bottom: 6%;
+  right: 4%;
+  background: #ffffff;
+  line-height: 52px;
+  width: 60px;
+  height: 60px;
+  border: 5px solid #7ebab5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.fixedbtn p {
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.fixedbtn:hover p {
+  color: #7ebab5;
+  text-decoration: none;
+}
+.fixedbtn a:link {
+  color: #454864;
+}
+.fixedbtn a:visited {
+  color: #454864;
+}
+.fixedbtn a:active {
+  color: #454864;
+}

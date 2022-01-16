@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Forms</title>
+     {% load static %}
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+     <!-- <form action="/hlo" method="post"> -->
+     {% csrf_token %}
+     <a href="/">home</a>
+     <a href="/upload/">upload</a>
+          
+     <form action="/process/" method="POST">
+          <input type="hidden" name="no_author" id="no_author" value=1>
+          <br>
+          <input type="text" name="authorf1" id="authorf1" required>
+          <input type="text" name="authorm1" id="authorm1">
+          <input type="text" name="authorl1" id="authorl1" required>
+          <br>
+          <div class="addauthor">
+
+          </div>
+          <div class="temp"onclick="addauthor()">~plus</div>
+          <br>
+          journal name
+          <textarea name="journal" id="journal" cols="30" rows="10" required>journal name</textarea>
+          <br>
+          paper name
+          <textarea name="papername" id="papername" cols="30" rows="10" required>paper name</textarea>
+          <br>
+          paper id
+          <input type="text" name="paperid" id="paperid" value="ed934" required>
+          <br>
+          edition
+          <input type="number" name="paperedition" min="1" id="paperedition" value="1" required>
+          <br>
+          year
+          <input type="number" name="year" id="year" min="1000" max="2021"  step="1" value="2000" required>
+          <br>
+          start page
+          <input type="number" min="1" value="2" name="startpage" id="startpage">
+          <br>
+          end page
+          <input type="number" name="endpage" min="1" value="5" id="endpage" required>
+          <br>
+          <button name="submit" type="submit">submit</button>
+     </form>
+     <a href="/excel/">excel</a>
+     <script src="{% static 'js/author.js'%}"></script>
+</body>
+
+</html>
