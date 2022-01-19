@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #f6f5f5;
+}
+.fa-house-blank:hover {
+  color: #4ecca3;
+  transition: 0.3s;
+}
+.fa-house-blank {
+  font-size: 30px;
+  margin: 30px 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* height: 100vh; */
+  align-items: center;
+  background: #232931;
+}
+.title {
+  color: #4ecca3;
+}
+.container {
+  width: 70%;
+  background: #393e46;
+  padding: 25px 30px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.defaultauthor {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.defaultauthor input {
+  width: 105%;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, #71b7e6, #9b5b96);
+}
+.addauthor {
+  display: flex;
+  justify-content: space-between;
+}
+
+.namebox {
+  width: 30%;
+  margin: 10px 0px;
+}
+
+.fname {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 0.8px solid #232931;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  background-color: #232931;
+  color: #f6f5f5;
+}
+
+.fname:hover {
+  border-color: #4ecca3;
+}
+
+.adddetails {
+  width: 50%;
+  margin: 15px 0px;
+}
+
+form .button {
+  width: 100%;
+  margin: 40px 0 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background: #4ecca3;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 7px 0px;
+}
+
+.temp {
+  margin-top: 10px;
+  font-size: 25px;
+}
+.delete {
+  display: flex;
+  padding: 25px 0 0 0;
+  text-align: center;
+  align-content: stretch;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.button p {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.button a {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background: #4ecca3;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 7px 0px;
+  text-align: center;
+}
+.fixedbtn {
+  position: fixed;
+  bottom: 6%;
+  right: 4%;
+  background: #ffffff;
+  line-height: 52px;
+  width: 60px;
+  height: 60px;
+  border: 5px solid #7ebab5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.fixedbtn p {
+  color: #454864;
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.fixedbtn:hover p {
+  color: #7ebab5;
+  text-decoration: none;
+}
+.fixedbtn a{
+  text-decoration: none;
+}
+.fixedbtn a:link {
+  color: #454864;
+}
+.fixedbtn a:visited {
+  color: #454864;
+}
+.fixedbtn a:active {
+  color: #454864;
+}

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* color: #f6f5f5; */
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #232931;
+    /* background: -webkit-linear-gradient(to right, #232931, #393E46);
+    background: linear-gradient(to right , #232931, #393E46); */
+    color: #EEEEEE;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 15%;
+    justify-content: space-between;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.header a{
+    color: #4ECCA3;
+}
+.container h3{ 
+    color: #4ECCA3;
+    margin: 0 10px;
+}
+.container{
+    margin: 20px 0;
+    background: #393E46;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 650px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: rgba(149,157,165,0.2) 0px 8px 24px; */
+}
+
+.container form{
+    height: 400px;
+    border: 3px dashed #232931;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    word-spacing: 2rem;
+    position: relative;
+    
+}
+.container form label{
+    position: absolute;
+    word-spacing: 2px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container form i{
+    font-size: 30px;
+}
+.container input#excel{
+    height: 400px;
+    width: 100%;
+    opacity: 0;
+}
+
+.container input#submit{
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background: #4ECCA3;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 7px 0px;
+    text-align: center;
+    outline: none;
+    margin: 0px 10px;
+}
+
+.sample a{
+    color: #4ECCA3;
+    text-decoration: none;
+}

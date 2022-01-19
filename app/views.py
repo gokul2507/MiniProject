@@ -26,11 +26,16 @@ def home(request):
 def index(request):
      return render(request, 'index.html')
 
-
+def auth_fun(x):
+        x=x.split()
+        if len(x)==2:
+            return [x[0],'',x[1]]
+        else:
+            return x
 def display(request):
     if request.POST and request.POST.get("id"):
         row_data=data.row_values(int(request.POST.get("id"))+1)
-        row_data[2]=row_data[2].split(";")
+        row_data[2]=list(map(auth_fun,row_data[2].split(";")))
         content={"content":row_data,"uid":request.POST.get("id")}
         return render(request,'display.html',content)
         pass

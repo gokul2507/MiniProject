@@ -1,35 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
+     <link rel="stylesheet" href="{% static 'css/display.css' %}">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+     <link rel="stylesheet"
+          href="https://fonticons-free-fonticons.netdna-ssl.com/kits/1ce05b4b/publications/117312/woff2.css"
+          media="all">
 </head>
+
 <body>
-     <a href="/">home</a>
-     <a href="/upload/">upload</a>
-     display
-     <br>
-     paperid: {{content.0}}<br>
-     authorcount: {{content.1}}<br>
-     Name:  
-     {% for i in content.2 %}
-     {{i}},
-     {% endfor %}<br>
-     
-     journal:  {{content.3}}<br>
-     paper: {{content.4}}<br>
-     edition: {{content.5}}<br>
-     year: {{content.6}}<br>
-     spage: {{content.7}}<br>
-     epage: {{content.8}}<br>
+     <a href="/"><i class="fa-regular fa-house-blank"></i></a>
+
+     <div class="container">
+          <div class="title">Details</div>
+          <form action="/process/" method="POST">
+               <input type="hidden" name="no_author" id="no_author" value="2">
+               {% for i in content.2 %}
+               <div class="defaultauthor">
+                    <div class="namebox">
+                         <span class="details">First Name</span>
+                         <div class="fname">
+                              <p>{{i.0}}</p>
+                         </div>
+                    </div>
+                    <div class="namebox">
+                         <span class="details">Middle Name</span>
+                         <div class="fname">
+                              <p>{{i.1}}</p>
+                         </div>
+                    </div>
+                    <div class="namebox">
+                         <span class="details">Last Name</span>
+                         <div class="fname">
+                              <p>{{i.2}}</p>
+                         </div>
+                    </div>
+               </div>
+               {% endfor %}
+               <div class="adddetails">
+                    <span class="details">Journal Name</span>
+                    <div class="fname">
+                         <p>{{content.3}}</p>
+                    </div>
+               </div>
+               <div class="adddetails">
+                    <span class="details">Paper Name</span>
+                    <div class="fname">
+                         <p>{{content.4}}</p>
+                    </div>
+               </div>
+               <div class="adddetails">
+                    <span class="details">Paper Id</span>
+                    <div class="fname">
+                         <p>{{content.0}}</p>
+                    </div>
+               </div>
+               <div class="adddetails"><span class="details">Edition</span>
+                    <div class="fname">
+                         <p>{{content.5}}</p>
+                    </div>
+               </div>
+               <div class="adddetails"><span class="details">Year</span>
+                    <div class="fname">
+                         <p>{{content.6}}</p>
+                    </div>
+               </div>
+               <div class="adddetails"><span class="details">Start Page</span>
+                    <div class="fname">
+                         <p>{{content.7}}</p>
+                    </div>
+               </div>
+               <div class="adddetails"><span class="details">End Page</span>
+                    <div class="fname">
+                         <p>{{content.8}}</p>
+                    </div>
+               </div>
+               <div class="button">
+                    <a id={{uid}} onclick="displaydetails(this,'/edit/')">EDIT <i class="fas fa-pen"></i></a>
+                    <p>OR</p>
+                    <a id={{uid}} onclick="displaydetails(this,'/delete/')">DELETE <i class="fas fa-trash"></i></a>
+               </div>
+          </form>
+          <div class="fixedbtn">
+               <a href="/upload/">
+                    <p>+</p>
+               </a>
+          </div>
+     </div>
+
+
+
+
+
+
+
      <!-- <a href="/edit/" name="uid" value={{uid}}>edit</a> -->
-     <button id={{uid}} onclick="displaydetails(this,'/edit/')">edit</button>
-     <button id={{uid}} onclick="displaydetails(this,'/delete/')">delete</button>
+     <!-- <button id={{uid}} onclick="displaydetails(this,'/edit/')">edit</button> -->
+     <!-- <button >delete</button> -->
      <!-- <button id={{uid}} onclick="delete(this)">delete</button> -->
      <script src="{% static 'js/display.js'%}"></script>
 </body>
-</html>
 
+</html>

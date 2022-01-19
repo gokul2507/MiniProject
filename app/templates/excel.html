@@ -7,27 +7,36 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
+     <link rel="stylesheet" href="{% static 'css/excel.css' %}">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+     <link rel="stylesheet"
+          href="https://fonticons-free-fonticons.netdna-ssl.com/kits/1ce05b4b/publications/117312/woff2.css"
+          media="all">
 
 </head>
 
 <body>
-     <div id="loader"></div>
-     <a href="/">home</a>
-     <a href="/upload/">upload</a>
-     excel
-     {% csrf_token %}
-     <form action='{% url "excel" %}' method="POST" enctype="multipart/form-data">
-          <input type="file" name="excel" id="excel" required>
-          <input type="submit" id="submit" name="submit" value="submit" />
-     </form>
+     <div class="header">
+          <a href="/"><i class="fa-regular fa-house-blank"></i></a>
+          <a href="/upload/"><i class="fas fa-arrow-up"></i></a>
+     </div>{% csrf_token %}
+     <div class="container">
+          <h3>Upload Excel</h3>
+          <input type="hidden" name="csrfmiddlewaretoken"
+               value="3DB1NoTvZ8d4jv2b0Pnl4LvyuOhDOpnF53QWa6CwXj5f95MvFt2xkhETK0LDfjOd">
+          <form action='{% url "excel" %}' method="POST" enctype="multipart/form-data">
+               <input type="file" name="excel" id="excel" required>
+               <label for="excel"><i class="far fa-file-excel"></i>Choose a file</label>
+               <input type="submit" id="submit" name="submit" value="Upload" />
+          </form>
+     </div>
 
      {% if error%}
      {{error}}
      {% endif %}
-     <p>formate : <a href="{% static 'js/sample.xlsx'%}" download>Here</a></p>
-
-
-     <br>
-</body>
+     <div class="sample">
+          <a href="/static/js/sample.xlsx" download>Sample Format <i class="far fa-save"></i></a>
+     </div>
+ </body>
 
 </html>
