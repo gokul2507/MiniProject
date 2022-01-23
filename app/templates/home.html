@@ -33,29 +33,24 @@
                <div onclick="displaydetails(this,'/display/')" id={{ forloop.counter }} class="list active">
                     <!-- {{ forloop.counter }} -->
                     <!--Count for id-->
+                    <!-- `formate_author({{i.name.0}})` -->
                     <div class="cardheader">
-                         <p>{{i.name.0}}</p>
+                         <p class="authorname">{{i.name.0}}</p>
                          <br>
                     </div>
                     <div class="cardcontent">
                          <!--Journal Name-->
                          <p> {{i.journal}} </p>
-                         <br>
                          <!--Paper Name-->
                          <p>{{i.paper}} </p>
-                         <br>
                          <!--Edition-->
                          <p> edition:{{i.edition}} </p>
-                         <br>
                          <!--Year-->
                          <p> year:{{i.year}} </p>
-                         <br>
                          <!--starting Page-->
                          <p> start page:{{i.spage}} </p>
-                         <br>
                          <!--Ending page-->
                          <p> end page:{{i.epage}} </p>
-                         <br>
                     </div>
                </div>
                {% endfor %}

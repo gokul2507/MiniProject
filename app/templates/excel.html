@@ -26,7 +26,7 @@
                value="3DB1NoTvZ8d4jv2b0Pnl4LvyuOhDOpnF53QWa6CwXj5f95MvFt2xkhETK0LDfjOd">
           <form action='{% url "excel" %}' method="POST" enctype="multipart/form-data">
                <input type="file" name="excel" id="excel" required>
-               <label for="excel"><i class="far fa-file-excel"></i>Choose a file</label>
+               <label for="excel"><i class="far fa-file-excel"></i><p class="filename"> Choose a file</p></label>
                <input type="submit" id="submit" name="submit" value="Upload" />
           </form>
      </div>
@@ -35,8 +35,9 @@
      {{error}}
      {% endif %}
      <div class="sample">
-          <a href="/static/js/sample.xlsx" download>Sample Format <i class="far fa-save"></i></a>
+          <a href="{% static 'sample.xlsx' %}" download>Sample Format <i class="far fa-save"></i></a>
      </div>
+     <script src="{% static 'js/excel.js' %}"></script>
  </body>
 
 </html>

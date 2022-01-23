@@ -2,50 +2,101 @@
 <html lang="en">
 
 <head>
+     {% load static %}
+
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
+     <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+     <link rel="stylesheet"
+          href="https://fonticons-free-fonticons.netdna-ssl.com/kits/1ce05b4b/publications/117312/woff2.css"
+          media="all">
 </head>
 
 <body>
-     <a href="/">home</a>
-     <a href="/upload/">upload</a>
-     <form action="/update/" method="POST">
-          edit
-          <br>
-          uid {{uid}}
-          <input type="hidden" name="uid" id="uid" value={{ uid }} required>
-          <input type="hidden" name="no_author" id="no_author" value={{ content.1 }}>
-          {% for i in content.2 %}
-          <input type="text" name=authorf{{ forloop.counter }} id=authorf{{ forloop.counter }} value={{ i.0 }} required>
-          <input type="text" name=authorm{{ forloop.counter }} id=authorm{{ forloop.counter }} value={{ i.1 }}>
-          <input type="text" name=authorl{{ forloop.counter }} id=authorl{{ forloop.counter }} value={{ i.2 }} required>
-          <br>
-          {% endfor %}<br>
-          journal name
-          <textarea name="journal" id="journal" cols="30" rows="10" required>{{ content.3 }}</textarea>
-          <br>
-          paper name
-          <textarea name="papername" id="papername" cols="30" rows="10" required>{{ content.4 }}</textarea>
-          <br>
-          paper id
-          <input type="text" name="paperid" id="paperid" value={{ content.0 }} required>
-          <br>
-          edition
-          <input type="TEXT" name="paperedition" min="1" id="paperedition" value={{ content.5 }} required>
-          <br>
-          year
-          <input type="number" name="year" id="year" min="1000" max="2021" step="1" value={{ content.6 }} required>
-          <br>
-          start page
-          <input type="number" min="1" max="2000" value={{ content.7 }} name="startpage" id="startpage">
-          <br>
-          end page
-          <input type="number" name="endpage" min="1" max="2000" value={{ content.8 }} id="endpage" required>
-          <br>
-          <button name="submit" type="submit">submit</button>
-     </form>
+     <a href="/"><i class="fa-regular fa-house-blank"></i></a>
+     <!-- <a href="/upload/">upload</a> -->
+     <div class="container">
+          <div class="title">Details</div>
+          <form action="/update/" method="POST">
+               <input type="hidden" name="uid" id="uid" value={{ uid }} required>
+               <input type="hidden" name="no_author" id="no_author" value={{ content.1 }}>
+               <div class="defaultauthor">
+                    <div class="namebox">
+                         <span class="details">First Name</span>
+                         <input type="text" name="authorf1" id="authorf1" value="{{ content.2.0.0 }}" required="">
+                    </div>
+                    <div class="namebox">
+                         <span class="details">Middle Name</span>
+                         <input type="text" name="authorm1" value="{{ content.2.0.1 }}" id="authorm1">
+                    </div>
+                    <div class="namebox">
+                         <span class="details">Last Name</span>
+                         <input type="text" name="authorl1" id="authorl1" value="{{ content.2.0.2 }}" required="">
+                    </div>
+               </div>
+               <div class="addauthor">
+                    {% for i in content.2 %}
+                    {% if not forloop.first %}
+                    <div class="subadd">
+                         <div class="namebox">
+                              <span class="details">First Name</span>
+                              <input type="text" name=authorf{{ forloop.counter }} id=authorf{{ forloop.counter }}
+                                   required="" value={{ i.0 }}>
+                         </div>
+                         <div class="namebox">
+                              <span class="details">Middle Name</span>
+                              <input type="text" name=authorm{{ forloop.counter }} id=authorm{{ forloop.counter }}
+                                   value={{i.1}}>
+                         </div>
+                         <div class="namebox">
+                              <span class="details">Last Name</span>
+                              <input type="text" name=authorl{{ forloop.counter }} id=authorl{{ forloop.counter }}
+                                   required="" value={{ i.2 }}>
+                         </div>
+                         <div class="delete" onclick=deleteauthor(this) id={{ forloop.counter }}><i
+                                   class="fa-regular fa-trash"></i>
+                         </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+               </div>
+               <div class="temp" onclick="addauthor()"><i class="fa-regular fa-plus"></i></div>
+               <div class="adddetails">
+                    <span class="details">Journal Name</span>
+                    <input type="text" name="journal" id="journal" value={{ content.3 }} required="">
+               </div>
+               <div class="adddetails">
+                    <span class="details">Paper Name</span>
+                    <input type="text" name="papername" id="papername" value={{ content.4 }} required="">
+               </div>
+               <div class="adddetails">
+                    <span class="details">Paper Id</span>
+                    <input type="text" name="paperid" id="paperid" value={{ content.0 }} required="">
+               </div>
+               <div class="adddetails"><span class="details">Edition</span>
+                    <input type="number" name="paperedition" min="1" id="paperedition" value={{ content.5 }}
+                         required="">
+               </div>
+               <div class="adddetails"><span class="details">Year</span>
+                    <input type="number" name="year" id="year" min="1000" max="2021" step="1" value={{ content.6 }}
+                         required="">
+               </div>
+               <div class="adddetails"><span class="details">Start Page</span>
+                    <input type="number" min="1" name="startpage" value={{ content.7 }} id="startpage">
+               </div>
+               <div class="adddetails"><span class="details">End Page</span>
+                    <input type="number" name="endpage" min="1" id="endpage" value={{ content.8 }} required="">
+               </div>
+               <div class="button">
+                    <input type="submit" value="Submit">
+               </div>
+          </form>
+     </div>
+     <script src="{% static 'js/author.js'%}"></script>
+
 </body>
 
 </html>

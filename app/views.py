@@ -50,6 +50,7 @@ def edit(request):
             if len(t)==2:
                 t=t[:1]+[" "]+t[1:]
             row_data[2][i]=t
+        row_data[1]=len(row_data[2])
         content={"content":row_data,"uid":request.POST.get("id")}
         return render(request,'edit.html',content)
     return redirect('home')

@@ -187,16 +187,20 @@ body {
   width: 100%;
 }
 .innercover .list {
-  height: 315px;
+  padding: 15px 25px;
   float: left;
-  display: flex;
+  height: 315px;
+  /* display: flex; */
   margin: 10px;
-  padding-left: 30px;
+  /* padding-left: 30px; */
   width: 285px;
   flex-direction: column;
   align-items: flex-start;
   background-color: #454864;
-  justify-content: center;
+  /* justify-content: center;*/
+}
+.innercover .none{
+  display: none;
 }
 .innercover .list:hover {
   background-color: #7ebab5;
@@ -210,20 +214,32 @@ body {
   color: #454864;
   font-weight: 500;
 }
-.innercover .none {
-  display: none;
+.cardheader {
+  overflow: hidden;
+  padding: 10px 15px;
+  display: flex;
+  height: 25%;
+  width: 100%;
+  justify-content: left;
+  align-items: center;
 }
 .cardheader p {
   color: #7ebab5;
   text-align: center;
   font-size: 20px;
   font-weight: 600;
-  line-height: 40px;
+  line-height: 1em;
+}
+.cardcontent {
+  width: 100%;
+  padding: 15px 15px;
+  height: 75%;
+  padding-right: 0px;
 }
 .cardcontent p {
   color: #f6f5f5;
   font-size: 16px;
-  line-height: 5px;
+  overflow: hidden;
 }
 
 .fixedbtn {
